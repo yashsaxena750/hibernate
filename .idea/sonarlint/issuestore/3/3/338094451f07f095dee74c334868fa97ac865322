@@ -1,0 +1,22 @@
+
+‰
+java:S1192""FDefine a constant instead of duplicating this literal "Error" 4 times.(âÂö·8×¬í„ò1J$55f3e9c7-5751-429b-8076-3c08fb7630b3
+“
+java:S1301"KReplace this "switch" statement by "if" statements to increase readability.(ë´åİşÿÿÿÿ8Ùçúıñ1J$5cb93625-59bf-4cbe-bcb2-38c7c6970d33
+“
+java:S1301;"KReplace this "switch" statement by "if" statements to increase readability.(ë´åİşÿÿÿÿ8Ø¬í„ò1J$0eba50ce-36e2-42fe-acd5-e0c242d3f9ad
+	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(¸è©á8Úçúıñ1J$0d472ddf-2c4a-4ae7-96d5-616a61ebccd4
+Ä
+java:S1186W"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‚“¶î8éçúıñ1J$a18a32af-1ad3-464e-b743-3f75f599efcb
+}
+java:S1161":Add the "@Override" annotation above this method signature( Üó8ìçúıñ1J$0c445460-27df-4faa-95c8-3824a9e3e984
+‚
+java:S1161":Add the "@Override" annotation above this method signature(°Å·ğşÿÿÿÿ8ã¬í„ò1J$bbbb874d-e705-4e82-b6e3-f5f29ac57fe0
+¢
+java:S1989"_Handle the following exceptions that could be thrown by "login": ServletException, IOException.(Ç‡ò¡8ñ»ò…ò1J$29c95ed1-827a-4346-bb0b-d2ff398f524f
+‚
+java:S11615":Add the "@Override" annotation above this method signature(ÿàğÿùÿÿÿÿ8òçúıñ1J$d0d3f670-49a8-4c69-bc44-a3ca878855e2
+¨
+java:S1989="`Handle the following exceptions that could be thrown by "signup": ServletException, IOException.(³²…ÿÿÿÿÿ8ôçúıñ1J$24ca12e7-fa09-4404-af6b-6241dd89eeba
+}
+java:S1161W":Add the "@Override" annotation above this method signature(‚“¶î8õçúıñ1J$e569c689-4b7b-4d7f-bbdb-c3e332037dcc

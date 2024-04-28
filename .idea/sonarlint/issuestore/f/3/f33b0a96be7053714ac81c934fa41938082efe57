@@ -1,0 +1,26 @@
+
+	java:S1123"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8·ÖÓ¦ò1J$99b845dd-495a-4b98-b5ab-f9a368d529bc
+‰
+java:S1192\"FDefine a constant instead of duplicating this literal "udata" 7 times.(îºßø8¹ÖÓ¦ò1J$5df17264-b805-4628-8bde-3db584d01dfa
+
+java:S1192y"JDefine a constant instead of duplicating this literal "login.jsp" 4 times.(°°‘û8æİã¦ò1J$9e22bac8-0938-49bf-9a79-a921f2884a99
+©
+java:S1488-"fImmediately return this expression instead of assigning it to the temporary variable "hashedPassword".(âĞí’8ºÖÓ¦ò1J$07e4c8ab-d3b4-4863-af53-0c10efbcd5be
+”	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ï”Šìüÿÿÿÿ8ºÖÓ¦ò1J$6689ad7e-4d96-47ef-bad2-2c8ee03d850c
+
+java:S2629w"7Use the built-in formatting to construct this argument.(ËÍË·şÿÿÿÿ8èİã¦ò1J$23ec8dd8-56e9-49cd-8763-45f9d4fae9de
+{
+java:S2629ˆ"7Use the built-in formatting to construct this argument.(Êÿ’¨8èİã¦ò1J$0c03a55a-0c79-4e4d-9d29-2ce6ed41e568
+—
+java:S2259"OA "NullPointerException" could be thrown; "inputPasswordHash" is nullable here.(Óˆû¦üÿÿÿÿ8ò…å¦ò1J$08799b30-7801-45df-b133-eb5ce0f3971d
+|
+java:S4719%"9Replace charset name argument with StandardCharsets.UTF_8(©‡ƒá8öÖÓ¦ò1J$bc58934b-01f4-4f32-9f89-932c061e8c74
+t
+java:S1874S",Remove this use of "save"; it is deprecated.(õğµÉüÿÿÿÿ8„×Ó¦ò1J$a3a5457d-f6ef-4ef9-8bec-5593ab9bb8d7
+x
+java:S1481i"5Remove this unused "alreadyProcessed" local variable.(Ş‚¡¥8«Şã¦ò1J$a5a6550e-91f1-44c3-b840-aac12322d97c
+u
+java:S1874r"3Remove this use of "createQuery"; it is deprecated.(§É…w8¬Şã¦ò1J$8fce5ed0-f850-414a-8c6c-f87a9c4314b1
+q
+java:S1481‚"-Remove this unused "username" local variable.(°Ë¯’8­Şã¦ò1J$bf50bf32-111d-47c8-a487-05571a35ad56
+	java:S125ƒ"<This block of commented-out lines of code should be removed.(ö„·8®Şã¦ò1J$4c9815c1-1ba0-4efc-87d7-29e3170d5deb

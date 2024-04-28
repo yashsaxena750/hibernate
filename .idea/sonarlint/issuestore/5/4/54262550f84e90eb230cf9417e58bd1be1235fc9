@@ -1,0 +1,24 @@
+
+“
+java:S1301"KReplace this "switch" statement by "if" statements to increase readability.(ë´åİşÿÿÿÿ8—‚ì¡ò1J$574776fd-b309-43b1-889a-3723149d27b2
+	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(”¹ÓĞ8˜‚ì¡ò1J$82b35e85-1934-47b8-bae7-4c2c40075a41
+
+java:S1223!"LRename this method to prevent any misunderstanding or make it a constructor.(¡…—¹8™‚ì¡ò1J$de061052-6690-4129-85b3-238b5f2bfeaf
+Ä
+java:S1186@"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‚“¶î8‚ì¡ò1J$7a9cfebe-3653-46c4-ad5f-a5c99a05335b
+
+java:S1450"VRemove the "message" field and declare it as a local variable in the relevant methods.(ù„è¿ûÿÿÿÿ8‚ì¡ò1J$17645233-377f-47cf-9007-d182039b5db1
+}
+java:S1161":Add the "@Override" annotation above this method signature( Üó8¡‚ì¡ò1J$f292e2be-eb66-496e-961c-6c92b5ad5171
+‚
+java:S1161":Add the "@Override" annotation above this method signature(°Å·ğşÿÿÿÿ8¢‚ì¡ò1J$df12ece5-b7a4-4ae9-8c8a-34ee994fe3d4
+i	java:S131""Add a default case to this switch.(ë´åİşÿÿÿÿ8¦‚ì¡ò1J$35e645dc-0b96-47a8-b6e4-ee1c3ca15015
+£
+java:S1989"`Handle the following exceptions that could be thrown by "logout": ServletException, IOException.(Ú¢õ8íİí¡ò1J$fb9eb75f-b639-45e7-aa2f-e7fd173b449c
+r	java:S106-"+Replace this use of System.out by a logger.(®ìŸÛüÿÿÿÿ8©‚ì¡ò1J$d8ebc7e2-8704-4ca4-8474-4a5f71eb1326
+}
+java:S1161@":Add the "@Override" annotation above this method signature(‚“¶î8­‚ì¡ò1J$e9362943-ec76-48bf-ac6c-e0761776435a
+x
+java:S1128"5Remove this unused import 'java.util.logging.Logger'.(ƒ¥óš8à’í¡ò1J$ca2346ac-ac1c-4e25-b630-583cb8c351ce
+s
+java:S1068"+Remove this unused "message" private field.(ù„è¿ûÿÿÿÿ8¯‚ì¡ò1J$965c560e-6df3-40b5-af23-b4d0f0ef37be
