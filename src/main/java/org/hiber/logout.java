@@ -1,6 +1,7 @@
 package org.hiber;
 
 import java.io.*;
+import java.util.logging.Logger;
 
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
@@ -18,6 +19,18 @@ public class logout extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         response.setContentType("text/html");
 
+        String action = request.getParameter("action");
+        if (action != null && !action.isEmpty()) {
+            switch (action) {
+                case "logout":
+                    logout(request, response);
+                    break;
+            }
+
+        }
+    }
+
+    public void logout(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession(false);
         response.setContentType("text/html");
 
@@ -44,10 +57,8 @@ public class logout extends HttpServlet {
             }
         }
 
-
         request.setAttribute("logdata", "you have been logged out successfully!");
         request.getRequestDispatcher("login.jsp").forward(request, response);
-
     }
 
     public void destroy() {

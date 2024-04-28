@@ -19,7 +19,7 @@
 
         <%
 
-            String username = (String)request.getAttribute("udata");
+            String username = (String)session.getAttribute("udata");
             if(username!=null)
             {
                 out.println("<p>"+"hello "+username+"</p>");
@@ -36,6 +36,9 @@
     <h3>Welcome to GeeksforGeeks..</h3>
 
     <br> <input type="submit" value="Logout" />
+
+    <input type="hidden" name="action" value="logout">
+
 </form>
 
 </body>

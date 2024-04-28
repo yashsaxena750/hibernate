@@ -1,5 +1,5 @@
 
-˜	java:S117D"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’Þü¼ýÿÿÿÿ8±ƒûƒò1J$eb510cc3-6155-4ff4-8726-c0e8b70dbd3f
-™	java:S116"RRename this field "user_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(êñ„Äÿÿÿÿÿ8¶ƒûƒò1J$1136a7e0-25d8-4475-ab41-e083a0cd5e1e
-’	java:S116"PRename this field "Email" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾½ÊÂ8¶ƒûƒò1J$a5de4bd2-00f7-4564-a8c5-d5c130acc0d9
-‘	java:S116"ORename this field "Salt" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Óæœê8¶ƒûƒò1J$f691c65e-4c9c-4bc6-ab7d-12584ef64ec8
+˜	java:S117D"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’Þü¼ýÿÿÿÿ8±ƒûƒò1J$ed5142f8-bda2-4bbe-bd6f-d024000ceaab
+™	java:S116"RRename this field "user_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(êñ„Äÿÿÿÿÿ8¶ƒûƒò1J$a51cc419-c447-47da-9851-521e08d82698
+’	java:S116"PRename this field "Email" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾½ÊÂ8¶ƒûƒò1J$b18af058-f47e-4496-8463-093e84400e59
+‘	java:S116"ORename this field "Salt" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Óæœê8¶ƒûƒò1J$ddd2fa2c-2c36-4c97-a6cc-8dac215f65d4

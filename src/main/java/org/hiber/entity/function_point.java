@@ -130,10 +130,12 @@ public class function_point {
 
                         if (inputPasswordHash.equals(storedpasswd)) {
                             HttpSession sessionlog = request.getSession();
-                            sessionlog.setAttribute("username", user.getUsername());
+                            sessionlog.setAttribute("udata", user.getUsername());
                             String username = user.getUsername();
-                            request.setAttribute("udata", username);
-                            request.getRequestDispatcher("welcome.jsp").forward(request, response);
+                            //request.setAttribute("udata", username);
+                            //request.getRequestDispatcher("welcome.jsp").forward(request, response);
+                            response.sendRedirect("welcome.jsp");
+
                         } else {
                             logger.warning("Incorrect password for user: " + useremail);
                             request.setAttribute("udata", "Wrong Credentials");
