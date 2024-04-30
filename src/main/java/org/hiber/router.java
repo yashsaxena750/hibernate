@@ -60,6 +60,9 @@ public class router extends HttpServlet {
                 case "signup":
                     fp.signup(request, response);
                     break;
+                case "getreq":
+                    fp.getreq(request,response);
+                    break;
                 default:
                     PrintWriter out = null;
                     try {

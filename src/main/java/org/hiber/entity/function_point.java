@@ -8,7 +8,11 @@ import org.apache.commons.text.StringEscapeUtils;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URI;
+import java.net.URL;
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
 import java.io.IOException;
@@ -17,6 +21,8 @@ import java.security.MessageDigest;
 import java.security.SecureRandom;
 import java.util.Base64;
 import java.util.logging.Logger;
+
+import static java.lang.System.out;
 
 public class function_point {
 
@@ -154,8 +160,46 @@ public class function_point {
     }
 
 
+    public void getreq(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        final Logger logger = Logger.getLogger(getClass().getName());
 
-    public static String extractValue(String data, String key) {
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+
+        String urlParam = request.getParameter("url");
+        String murl = "https://bxss.me" + urlParam;
+        System.out.println(murl);
+
+        if (urlParam == null || urlParam.isEmpty()) {
+            out.println("URL parameter is missing.");
+            return;
+        }
+
+        try {
+            URI uri = new URI(murl);
+            URL url = uri.toURL();
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection.setRequestMethod("GET");
+            BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+            StringBuilder responseContent = new StringBuilder();
+            String line;
+            while ((line = reader.readLine()) != null) {
+                responseContent.append(line);
+            }
+            reader.close();
+//            out.println("Response: " + responseContent.toString());
+            request.setAttribute("respdata", StringEscapeUtils.escapeHtml4(responseContent.toString()));
+            request.getRequestDispatcher("welcome.jsp").forward(request, response);
+            connection.disconnect();
+        }catch (Exception e) {
+            request.setAttribute("respdata", "something went wrong");
+            request.getRequestDispatcher("welcome.jsp").forward(request, response);
+        }
+
+    }
+
+
+        public static String extractValue(String data, String key) {
         int startIndex = data.indexOf(key + "=") + key.length() + 1;
         int endIndex = data.indexOf(",", startIndex);
         if (endIndex == -1) {
