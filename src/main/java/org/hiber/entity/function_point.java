@@ -1,5 +1,6 @@
 package org.hiber.entity;
-
+import java.util.ArrayList;
+import java.util.List;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -21,7 +22,9 @@ import java.security.MessageDigest;
 import java.security.SecureRandom;
 import java.util.Base64;
 import java.util.logging.Logger;
-
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import static java.lang.System.out;
 
 public class function_point {
@@ -130,13 +133,19 @@ public class function_point {
                         String storedpasswd = user.getPassword();
                         String inputPasswordHash = hashPassword(userpass, saltString);
 
-                        if (inputPasswordHash.equals(storedpasswd)) {
-                            HttpSession sessionlog = request.getSession();
-                            sessionlog.setAttribute("udata", user.getUsername());
+                        if (inputPasswordHash.equals(storedpasswd) ) {
                             String username = user.getUsername();
-                            //request.setAttribute("udata", username);
-                            //request.getRequestDispatcher("welcome.jsp").forward(request, response);
-                            response.sendRedirect("welcome.jsp");
+                            HttpSession sessionlog = request.getSession();
+                            sessionlog.setMaxInactiveInterval(60);
+                            sessionlog.setAttribute("udata", username);
+                            if(username.equals("admin"))
+                            {
+                                response.sendRedirect("admin-control.jsp");
+                            }
+
+                            else {
+                                response.sendRedirect("welcome.jsp");
+                            }
 
                         } else {
                             logger.warning("Incorrect password for user: " + useremail);
@@ -159,8 +168,27 @@ public class function_point {
 
     }
 
+    public static String extractDomain(String url) {
+        String domainPattern = "^(?:https?://)?(?:www\\.)?([^:/\\s]+)";
+        Pattern pattern = Pattern.compile(domainPattern, Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(url);
+        if (matcher.find()) {
+            return matcher.group(1);
+        }
+        return null;
+    }
+
+    private boolean check_url(String url)
+    {
+        List<String> allowedDomains;
+        allowedDomains = new ArrayList<>();
+        allowedDomains.add("bxss.me");
+        return allowedDomains.contains(url);
+
+    }
 
     public void getreq(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         final Logger logger = Logger.getLogger(getClass().getName());
 
         response.setContentType("text/html");
@@ -168,7 +196,7 @@ public class function_point {
 
         String urlParam = request.getParameter("url");
         String murl = "https://bxss.me" + urlParam;
-        System.out.println(murl);
+
 
         if (urlParam == null || urlParam.isEmpty()) {
             out.println("URL parameter is missing.");
@@ -176,6 +204,12 @@ public class function_point {
         }
 
         try {
+            String domain = extractDomain(murl);
+            if(!check_url(domain))
+            {
+                out.println("Invalid URL.");
+                return;
+            }
             URI uri = new URI(murl);
             URL url = uri.toURL();
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -187,7 +221,6 @@ public class function_point {
                 responseContent.append(line);
             }
             reader.close();
-//            out.println("Response: " + responseContent.toString());
             request.setAttribute("respdata", StringEscapeUtils.escapeHtml4(responseContent.toString()));
             request.getRequestDispatcher("welcome.jsp").forward(request, response);
             connection.disconnect();

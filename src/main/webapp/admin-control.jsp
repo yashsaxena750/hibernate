@@ -1,4 +1,10 @@
-<%-- Created by IntelliJ IDEA. User: yashs Date: 27-04-2024 Time: 18:45 To change this template use File | Settings | File Templates. --%>
+<%--
+  Created by IntelliJ IDEA.
+  User: golith3r00t
+  Date: 17-06-2024
+  Time: 06:59
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.*" %>
 <%
@@ -64,8 +70,8 @@
 <body>
 <ul>
     <li><a class="active" href="#home">Home</a></li>
-    <li><a href="#news">News</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="Logs.jsp">Logs.jsp</a></li>
+    <li><a href="Users.jsp">Users</a></li>
     <form id="logout-form" action="<%= request.getContextPath() %>/logout-servlet" method="get">
         <li><button type="submit" class="logout-button" name="action" value="logout">Logout</button></li>
     </form>
@@ -75,8 +81,8 @@
     <%
         String username = (String) session.getAttribute("udata");
         String respdata = (String) request.getAttribute("respdata");
-
-        if (username != null) {
+        System.out.println(username);
+        if (username != null && username.equals("admin")) {
             out.println("<p>" + "hello " + username + "</p>");
             out.println("<form action='" + request.getContextPath() + "/router-servlet' method='post'>");
             out.println("<input type='text' name='url'>");
@@ -89,8 +95,7 @@
         }
 
         else {
-            request.setAttribute("udata", "please login to continue");
-            request.getRequestDispatcher("login.jsp").forward(request, response);
+            response.sendError(HttpServletResponse.SC_FORBIDDEN, "You are not authorized");
         }
     %>
 </h2>
